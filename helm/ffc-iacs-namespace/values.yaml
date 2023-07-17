@@ -3,17 +3,16 @@ environmentCode:
 name: ffc-iacs-namespace
 namespace: ffc-iacs
 workstream: ffc-iacs
-image: ffc-iacs-namespace
 
 labels: {}
 
 registrySecret:
- name: registry-credentials
+ name: ffc-iacs-registry-secret
  type: kubernetes.io/dockerconfigjson
  dockerConfigJson: tbc
 
 databaseConfigMap:
-  name: db
+  name: ffc-iacs-database-config
   applicationsJdbcUrl: jdbc:tbc
   applicationsUser: applications
   applicationFormsJdbcUrl: jdbc:tbc
@@ -43,7 +42,7 @@ databaseConfigMap:
 
 databaseSecret:
   type: Opaque
-  name: db-pwd
+  name: ffc-iacs-database-secret
   applicationsPassword: tbc
   applicationFormsPassword: tbc
   anomaliesPassword: tbc
@@ -59,7 +58,7 @@ databaseSecret:
   partiesAclPassword: tbc
 
 messageConfigMap:
-  name: stateless-env
+  name: ffc-iacs-message-config
   sso2PublicKeyPath: /data/sso2_public_key
   timezone: Europe/Rome
   rmqHost: rabbitmq.rabbitmq.svc.cluster.local
@@ -69,10 +68,27 @@ messageConfigMap:
 
 messageSecret:
   type: Opaque
-  name: stateless-pwd
+  name: ffc-iacs-message-secret
   sso2TokensAuthSecret: tbc
   rmqPassword: tbc
 
 serviceAccount:
   name: default
   automountServiceAccountToken: false
+
+storageClass:
+  name: ffc-iacs-storage-nfs
+
+persistentVolume:
+  name: ffc-iacs-persistent-volume
+  size: 10Gi
+  storageClassName: ffc-iacs-storage-nfs
+  nfsPath: tbc
+  nfsServer: tbc
+  nfsReadOnly: false
+
+persistentVolumeClaim:
+  name: ffc-iacs-persistent-volume-claim
+  size: 10Gi
+  storageClassName: ffc-iacs-storage-nfs
+  volumeName: ffc-iacs-volume
