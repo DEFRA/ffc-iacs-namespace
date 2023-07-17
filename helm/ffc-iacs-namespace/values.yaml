@@ -6,6 +6,12 @@ workstream: ffc-iacs
 
 labels: {}
 
+containerSecret:
+  name: ffc-iacs-container-secret
+
+containerConfigMap:
+  name: ffc-iacs-container-config
+
 registrySecret:
  name: ffc-iacs-registry-secret
  type: kubernetes.io/dockerconfigjson
