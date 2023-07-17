@@ -5,12 +5,11 @@ namespace: ffc-iacs
 workstream: ffc-iacs
 image: ffc-iacs-namespace
 
-labels:
-  component: service
+labels: {}
 
 registrySecret:
- type: kubernetes.io/dockerconfigjson
  name: registry-credentials
+ type: kubernetes.io/dockerconfigjson
  dockerConfigJson: tbc
 
 databaseConfigMap:
@@ -73,3 +72,7 @@ messageSecret:
   name: stateless-pwd
   sso2TokensAuthSecret: tbc
   rmqPassword: tbc
+
+serviceAccount:
+  name: default
+  automountServiceAccountToken: false
