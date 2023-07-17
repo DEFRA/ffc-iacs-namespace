@@ -1,0 +1,12 @@
+{{- include "ffc-helm-library.container-config-map" (list . "ffc-iacs-namespace.message-config-map") -}}
+{{- define "ffc-iacs-namespace.message-config-map" -}}
+metadata:
+  name: {{ .Values.messageConfigMap.name | quote }}
+data:
+  SSO2_PUBLIC_KEY_PATH: {{ .Values.messageConfigMap.sso2PublicKeyPath | quote }}
+  TIME_ZONE: {{ .Values.messageConfigMap.timezone | quote }}
+  RMQ_HOST: {{ .Values.messageConfigMap.rmqHost | quote }}
+  RMQ_PORT: {{ .Values.messageConfigMap.rmqPort | quote }}
+  RMQ_VHOST: {{ .Values.messageConfigMap.rmqVhost | quote }}
+  RMQ_USER: {{ .Values.messageConfigMap.rmqUser | quote }}
+{{- end -}}

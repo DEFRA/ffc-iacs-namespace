@@ -1,0 +1,75 @@
+environment: production
+environmentCode:
+name: ffc-iacs-namespace
+namespace: ffc-iacs
+workstream: ffc-iacs
+image: ffc-iacs-namespace
+
+labels:
+  component: service
+
+registrySecret:
+ type: kubernetes.io/dockerconfigjson
+ name: registry-credentials
+ dockerConfigJson: tbc
+
+databaseConfigMap:
+  name: db
+  applicationsJdbcUrl: jdbc:tbc
+  applicationsUser: applications
+  applicationFormsJdbcUrl: jdbc:tbc
+  applicationFormsUser: app_forms
+  anomaliesJdbcUrl: jdbc:tbc
+  anomaliesUser: anomalies
+  cllJdbcUrl: jdbc:tbc
+  cllUser: cll
+  cropPlanJdbcUrl: jdbc:tbc
+  cropPlanUser: cropplan
+  dossiersJdbcUrl: jdbc:tbc
+  dossiersUser: dossiers
+  lauJdbcUrl: jdbc:tbc
+  lauUser: lau
+  lpisEditorJdbcUrl: jdbc:tbc
+  lpisEditorUser: lpis_gis_server
+  partyRegistryJdbcUrl: jdbc:tbc
+  partyRegistryUser: party_registry
+  printEngineJdbcUrl: jdbc:tbc
+  printEngineUser: print_engine
+  ssoJdbcUrl: jdbc:tbc
+  ssoUser: sso2
+  taskManagerJdbcUrl: jdbc:tbc
+  taskManagerUser: taskmanager
+  partiesAclJdbcUrl: jdbc:tbc
+  partiesAclUser: parties_acl
+
+databaseSecret:
+  type: Opaque
+  name: db-pwd
+  applicationsPassword: tbc
+  applicationFormsPassword: tbc
+  anomaliesPassword: tbc
+  cllPassword: tbc
+  cropPlanPassword: tbc
+  dossiersPassword: tbc
+  lauPassword: tbc
+  lpisEditorPassword: tbc
+  partyRegistryPassword: tbc
+  printEnginePassword: tbc
+  ssoPassword: tbc
+  taskManagerPassword: tbc
+  partiesAclPassword: tbc
+
+messageConfigMap:
+  name: stateless-env
+  sso2PublicKeyPath: /data/sso2_public_key
+  timezone: Europe/Rome
+  rmqHost: rabbitmq.rabbitmq.svc.cluster.local
+  rmqPort: 5672
+  rmqVHost: iacs
+  rmqUser: tbc
+
+messageSecret:
+  type: Opaque
+  name: stateless-pwd
+  sso2TokensAuthSecret: tbc
+  rmqPassword: tbc

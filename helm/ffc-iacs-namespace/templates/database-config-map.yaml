@@ -1,0 +1,32 @@
+{{- include "ffc-helm-library.container-config-map" (list . "ffc-iacs-namespace.database-config-map") -}}
+{{- define "ffc-iacs-namespace.database-config-map" -}}
+metadata:
+  name: {{ .Values.databaseConfigMap.name | quote }}
+data:
+  DB_APPLICATIONS_JDBC_URL: {{ .Values.databaseConfigMap.applicationsJdbcUrl | quote }}
+  DB_APPLICATIONS_USER: {{ .Values.databaseConfigMap.applicationsUser | quote }}
+  DB_APPLICATION_FORMS_JDBC_URL: {{ .Values.databaseConfigMap.applicationFormsJdbcUrl | quote }}
+  DB_APPLICATION_FORMS_USER: {{ .Values.databaseConfigMap.applicationFormsUser | quote }}
+  DB_ANOMALIES_JDBC_URL: {{ .Values.databaseConfigMap.anomaliesJdbcUrl | quote }}
+  DB_ANOMALIES_USER: {{ .Values.databaseConfigMap.anomaliesUser | quote }}
+  DB_CLL_JDBC_URL: {{ .Values.databaseConfigMap.cllJdbcUrl | quote }}
+  DB_CLL_USER: {{ .Values.databaseConfigMap.cllUser | quote }}
+  DB_CROPPLAN_JDBC_URL: {{ .Values.databaseConfigMap.cropPlanJdbcUrl | quote }}
+  DB_CROPPLAN_USER: {{ .Values.databaseConfigMap.cropPlanUser | quote }}
+  DB_DOSSIERS_JDBC_URL: {{ .Values.databaseConfigMap.dossiersJdbcUrl | quote }}
+  DB_DOSSIERS_USER: {{ .Values.databaseConfigMap.dossiersUser | quote }}
+  DB_LAU_JDBC_URL: {{ .Values.databaseConfigMap.lauJdbcUrl | quote }}
+  DB_LAU_USER: {{ .Values.databaseConfigMap.lauUser | quote }}
+  DB_LPIS_EDITOR_JDBC_URL: {{ .Values.databaseConfigMap.lpisEditorJdbcUrl | quote }}
+  DB_LPIS_EDITOR_USER: {{ .Values.databaseConfigMap.lpisEditorUser | quote }}
+  DB_PARTY_REGISTRY_JDBC_URL: {{ .Values.databaseConfigMap.partyRegistryJdbcUrl | quote }}
+  DB_PARTY_REGISTRY_USER: {{ .Values.databaseConfigMap.partyRegistryUser | quote }}
+  DB_PRINTENGINE_JDBC_URL: {{ .Values.databaseConfigMap.printEngineJdbcUrl | quote }}
+  DB_PRINTENGINE_USER: {{ .Values.databaseConfigMap.printEngineUser | quote }}
+  DB_SSO_JDBC_URL: {{ .Values.databaseConfigMap.ssoJdbcUrl | quote }}
+  DB_SSO_USER: {{ .Values.databaseConfigMap.ssoUser | quote }}
+  DB_TASK_MANAGER_JDBC_URL: {{ .Values.databaseConfigMap.taskManagerJdbcUrl | quote }}
+  DB_TASK_MANAGER_USER: {{ .Values.databaseConfigMap.taskManagerUser | quote }}
+  DB_PARTIES_ACL_JDBC_URL: {{ .Values.databaseConfigMap.partiesAclJdbcUrl | quote }}
+  DB_PARTIES_ACL_USER: {{ .Values.databaseConfigMap.partiesAclUser | quote }}
+{{- end -}}
