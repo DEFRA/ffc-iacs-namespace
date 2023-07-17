@@ -7,6 +7,6 @@ data:
   TIME_ZONE: {{ .Values.messageConfigMap.timezone | quote }}
   RMQ_HOST: {{ .Values.messageConfigMap.rmqHost | quote }}
   RMQ_PORT: {{ .Values.messageConfigMap.rmqPort | quote }}
-  RMQ_VHOST: {{ .Values.messageConfigMap.rmqVhost | quote }}
+  RMQ_VHOST: {{ .Values.messageConfigMap.rmqVHost | quote }}
   RMQ_USER: {{ .Values.messageConfigMap.rmqUser | quote }}
 {{- end -}}

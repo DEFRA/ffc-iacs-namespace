@@ -80,7 +80,7 @@ messageSecret:
   rmqPassword: tbc
 
 serviceAccount:
-  name: default
+  name: ffc-iacs-service-account
   automountServiceAccountToken: false
 
 storageClass:
