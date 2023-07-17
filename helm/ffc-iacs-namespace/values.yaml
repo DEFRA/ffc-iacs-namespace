@@ -8,6 +8,7 @@ labels: {}
 
 containerSecret:
   name: ffc-iacs-container-secret
+  type: Opaque
 
 containerConfigMap:
   name: ffc-iacs-container-config
