@@ -16,7 +16,7 @@ containerConfigMap:
 registrySecret:
  name: ffc-iacs-registry-secret
  type: kubernetes.io/dockerconfigjson
- dockerConfigJson: dGJj
+ dockerConfigJson: tbc
 
 databaseConfigMap:
   name: ffc-iacs-database-config
