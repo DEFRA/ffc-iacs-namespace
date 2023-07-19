@@ -16,7 +16,7 @@ containerConfigMap:
 registrySecret:
  name: ffc-iacs-registry-secret
  type: kubernetes.io/dockerconfigjson
- dockerConfigJson: tbc
+ dockerConfigJson: ewogICJjcmVkc1N0b3JlIjogImRlc2t0b3AuZXhlIgp9
 
 databaseConfigMap:
   name: ffc-iacs-database-config
@@ -90,7 +90,7 @@ persistentVolume:
   name: ffc-iacs-persistent-volume
   size: 10Gi
   storageClassName: ffc-iacs-storage-nfs
-  nfsPath: tbc
+  nfsPath: /tbc
   nfsServer: tbc
   nfsReadOnly: false
 
