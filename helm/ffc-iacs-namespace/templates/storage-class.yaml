@@ -1,3 +1,0 @@
-{{- include "ffc-helm-library.storage-class" (list . "ffc-iacs-namespace.storage-class") -}}
-{{- define "ffc-iacs-namespace.storage-class" -}}
-{{- end -}}

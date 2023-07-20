@@ -83,18 +83,7 @@ serviceAccount:
   name: ffc-iacs-service-account
   automountServiceAccountToken: false
 
-storageClass:
-  name: ffc-iacs-storage-nfs
-
-persistentVolume:
-  name: ffc-iacs-persistent-volume
-  size: 10Gi
-  storageClassName: ffc-iacs-storage-nfs
-  nfsPath: /tbc
-  nfsServer: tbc
-  nfsReadOnly: false
-
 persistentVolumeClaim:
   name: ffc-iacs-persistent-volume-claim
   size: 10Gi
-  volumeName: ffc-iacs-persistent-volume
+  storageClassName: my-blob-storage

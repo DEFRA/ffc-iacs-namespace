@@ -1,8 +1,0 @@
-{{- include "ffc-helm-library.persistent-volume" (list . "ffc-iacs-namespace.persistent-volume") -}}
-{{- define "ffc-iacs-namespace.persistent-volume" -}}
-spec:
-  accessModes:
-    - ReadWriteMany
-  claimRef:
-    name: {{ .Values.persistentVolumeClaim.name }}
-{{- end -}}
