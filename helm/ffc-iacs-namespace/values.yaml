@@ -86,4 +86,4 @@ serviceAccount:
 persistentVolumeClaim:
   name: ffc-iacs-persistent-volume-claim
   size: 10Gi
-  storageClassName: my-blob-storage
+  storageClassName: ffc-iacs-blob-storage-nfs
