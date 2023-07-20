@@ -97,5 +97,4 @@ persistentVolume:
 persistentVolumeClaim:
   name: ffc-iacs-persistent-volume-claim
   size: 10Gi
-  storageClassName: ffc-iacs-storage-nfs
-  volumeName: ffc-iacs-volume
+  volumeName: ffc-iacs-persistent-volume

@@ -3,12 +3,6 @@
 spec:
   accessModes:
     - ReadWriteMany
-  nfs:
-    path: {{ .Values.persistentVolume.nfsPath }}
-    server: {{ .Values.persistentVolume.nfsServer }}
-    readOnly: {{ .Values.persistentVolume.nfsReadOnly }}
-  mountOptions:
-    - vers=4.1
   claimRef:
     name: {{ .Values.persistentVolumeClaim.name }}
 {{- end -}}
