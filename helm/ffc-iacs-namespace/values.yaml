@@ -84,6 +84,6 @@ serviceAccount:
   automountServiceAccountToken: false
 
 persistentVolumeClaim:
-  name: ffc-iacs-persistent-volume-claim
+  name: nfs
   size: 10Gi
   storageClassName: ffc-iacs-blob-storage-nfs
