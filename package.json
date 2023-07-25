@@ -1,6 +1,6 @@
 {
   "name": "ffc-iacs-namespace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helm chart to setup Abaco Agri dependencies",
   "repository": {
     "type": "git",
