@@ -87,3 +87,5 @@ persistentVolumeClaim:
   name: nfs
   size: 10Gi
   storageClassName: ffc-iacs-blob-storage-nfs
+
+deployPersistentVolumeClaim: true
