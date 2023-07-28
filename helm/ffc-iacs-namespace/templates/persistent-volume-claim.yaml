@@ -1,5 +1,6 @@
 {{- if .Values.deployPersistentVolumeClaim -}}
 {{- include "ffc-helm-library.persistent-volume-claim" (list . "ffc-iacs-namespace.persistent-volume-claim") -}}
+{{- end -}}
 {{- define "ffc-iacs-namespace.persistent-volume-claim" -}}
 metadata:
   {{ if .Values.environmentCode }}
@@ -12,5 +13,4 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-{{- end -}}
 {{- end -}}
