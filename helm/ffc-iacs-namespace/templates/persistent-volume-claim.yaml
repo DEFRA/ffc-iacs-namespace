@@ -1,12 +1,12 @@
-{{- if .Values.deployPersistentVolumeClaim -}}
 {{- include "ffc-helm-library.persistent-volume-claim" (list . "ffc-iacs-namespace.persistent-volume-claim") -}}
 {{- define "ffc-iacs-namespace.persistent-volume-claim" -}}
+{{- if .Values.deployPersistentVolumeClaim -}}
 metadata:
-  {{- if .Values.environmentCode -}}
+  {{ if .Values.environmentCode }}
   name: {{ .Values.persistentVolumeClaim.name }}-{{ .Values.namespace }}-{{ .Values.environmentCode }}
   {{ else }}
   name: {{ .Values.persistentVolumeClaim.name }}-{{ .Values.namespace }}
-  {{- end -}}
+  {{ end }}
   annotations:
     volume.beta.kubernetes.io/storage-class: azureblob-nfs-premium
 spec:
