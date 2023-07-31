@@ -76,7 +76,8 @@ messageConfigMap:
 messageSecret:
   type: Opaque
   name: ffc-iacs-message-secret
-  sso2TokensAuthSecret:
+  # assuming if this value is omitted, then username/password auth is used instead
+  sso2TokensAuthSecret: not-real
   rmqPassword: not-real
 
 serviceAccount:
