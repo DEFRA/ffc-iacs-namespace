@@ -5,5 +5,5 @@ name: ffc-iacs-namespace
 version: 1.0.0
 dependencies:
 - name: ffc-helm-library
-  version: 3.6.4
+  version: 3.6.5
   repository: https://raw.githubusercontent.com/defra/ffc-helm-repository/master/

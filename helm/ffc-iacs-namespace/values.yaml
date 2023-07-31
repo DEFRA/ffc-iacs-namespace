@@ -20,70 +20,82 @@ registrySecret:
 
 databaseConfigMap:
   name: ffc-iacs-database-config
-  applicationsJdbcUrl: jdbc:tbc
+  applicationsJdbcUrl: jdbc:not-real
   applicationsUser: applications
-  applicationFormsJdbcUrl: jdbc:tbc
+  applicationFormsJdbcUrl: jdbc:not-real
   applicationFormsUser: app_forms
-  anomaliesJdbcUrl: jdbc:tbc
+  anomaliesJdbcUrl: jdbc:not-real
   anomaliesUser: anomalies
-  cllJdbcUrl: jdbc:tbc
+  cllJdbcUrl: jdbc:not-real
   cllUser: cll
-  cropPlanJdbcUrl: jdbc:tbc
+  cropPlanJdbcUrl: jdbc:not-real
   cropPlanUser: cropplan
-  dossiersJdbcUrl: jdbc:tbc
+  dossiersJdbcUrl: jdbc:not-real
   dossiersUser: dossiers
-  lauJdbcUrl: jdbc:tbc
+  lauJdbcUrl: jdbc:not-real
   lauUser: lau
-  lpisEditorJdbcUrl: jdbc:tbc
+  lpisEditorJdbcUrl: jdbc:not-real
   lpisEditorUser: lpis_gis_server
-  partyRegistryJdbcUrl: jdbc:tbc
+  partyRegistryJdbcUrl: jdbc:not-real
   partyRegistryUser: party_registry
-  printEngineJdbcUrl: jdbc:tbc
+  printEngineJdbcUrl: jdbc:not-real
   printEngineUser: print_engine
-  ssoJdbcUrl: jdbc:tbc
+  ssoJdbcUrl: jdbc:not-real
   ssoUser: sso2
-  taskManagerJdbcUrl: jdbc:tbc
+  taskManagerJdbcUrl: jdbc:not-real
   taskManagerUser: taskmanager
-  partiesAclJdbcUrl: jdbc:tbc
+  partiesAclJdbcUrl: jdbc:not-real
   partiesAclUser: parties_acl
 
 databaseSecret:
   type: Opaque
   name: ffc-iacs-database-secret
-  applicationsPassword: tbc
-  applicationFormsPassword: tbc
-  anomaliesPassword: tbc
-  cllPassword: tbc
-  cropPlanPassword: tbc
-  dossiersPassword: tbc
-  lauPassword: tbc
-  lpisEditorPassword: tbc
-  partyRegistryPassword: tbc
-  printEnginePassword: tbc
-  ssoPassword: tbc
-  taskManagerPassword: tbc
-  partiesAclPassword: tbc
+  applicationsPassword: not-real
+  applicationFormsPassword: not-real
+  anomaliesPassword: not-real
+  cllPassword: not-real
+  cropPlanPassword: not-real
+  dossiersPassword: not-real
+  lauPassword: not-real
+  lpisEditorPassword: not-real
+  partyRegistryPassword: not-real
+  printEnginePassword: not-real
+  ssoPassword: not-real
+  taskManagerPassword: not-real
+  partiesAclPassword: not-real
 
 messageConfigMap:
   name: ffc-iacs-message-config
   sso2PublicKeyPath: /data/sso2_public_key
-  timezone: Europe/Rome
+  timezone: Europe/London
   rmqHost: rabbitmq.rabbitmq.svc.cluster.local
   rmqPort: 5672
-  rmqVHost: iacs
-  rmqUser: tbc
+  rmqVHost: "/"
+  rmqUser: not-real
 
 messageSecret:
   type: Opaque
   name: ffc-iacs-message-secret
-  sso2TokensAuthSecret: tbc
-  rmqPassword: tbc
+  sso2TokensAuthSecret: not-real
+  rmqPassword: not-real
 
 serviceAccount:
   name: ffc-iacs-service-account
   automountServiceAccountToken: false
 
+persistentVolume:
+  name: ffc-iacs-persistent-volume
+  provisionedBy: blob.csi.azure.com
+  storageClassName: azureblob-nfs-premium
+  readOnly: false
+  handle: ffc-iacs-persistent-volume-blob
+  resourceGroup: not-real
+  storageAccount: not-real
+  containerName: iacs
+  protocol: nfs
+
 persistentVolumeClaim:
   name: nfs
   size: 10Gi
-  storageClassName: ffc-iacs-blob-storage-nfs
+
+deployPersistentVolumeClaim: true
