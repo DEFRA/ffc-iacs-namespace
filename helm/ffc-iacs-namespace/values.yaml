@@ -76,7 +76,7 @@ messageConfigMap:
 messageSecret:
   type: Opaque
   name: ffc-iacs-message-secret
-  sso2TokensAuthSecret: not-real
+  sso2TokensAuthSecret:
   rmqPassword: not-real
 
 serviceAccount:
