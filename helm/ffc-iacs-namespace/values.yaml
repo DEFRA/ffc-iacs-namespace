@@ -80,10 +80,6 @@ messageSecret:
   sso2TokensAuthSecret: not-real
   rmqPassword: not-real
 
-serviceAccount:
-  name: default
-  automountServiceAccountToken: false
-
 persistentVolume:
   name: ffc-iacs-persistent-volume
   provisionedBy: blob.csi.azure.com
