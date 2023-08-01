@@ -14,12 +14,12 @@ containerConfigMap:
   name: ffc-iacs-container-config
 
 registrySecret:
- name: ffc-iacs-registry-secret
+ name: registry-credentials
  type: kubernetes.io/dockerconfigjson
  dockerConfigJson: ewogICJjcmVkc1N0b3JlIjogImRlc2t0b3AuZXhlIgp9
 
 databaseConfigMap:
-  name: ffc-iacs-database-config
+  name: db
   applicationsJdbcUrl: jdbc:not-real
   applicationsUser: applications
   applicationFormsJdbcUrl: jdbc:not-real
@@ -49,7 +49,7 @@ databaseConfigMap:
 
 databaseSecret:
   type: Opaque
-  name: ffc-iacs-database-secret
+  name: db-pwd
   applicationsPassword: not-real
   applicationFormsPassword: not-real
   anomaliesPassword: not-real
@@ -65,7 +65,7 @@ databaseSecret:
   partiesAclPassword: not-real
 
 messageConfigMap:
-  name: ffc-iacs-message-config
+  name: stateless-env
   sso2PublicKeyPath: /data/sso2_public_key
   timezone: Europe/London
   rmqHost: rabbitmq.rabbitmq.svc.cluster.local
@@ -75,13 +75,13 @@ messageConfigMap:
 
 messageSecret:
   type: Opaque
-  name: ffc-iacs-message-secret
+  name: stateless-pwd
   # assuming if this value is omitted, then username/password auth is used instead
   sso2TokensAuthSecret: not-real
   rmqPassword: not-real
 
 serviceAccount:
-  name: ffc-iacs-service-account
+  name: default
   automountServiceAccountToken: false
 
 persistentVolume:
