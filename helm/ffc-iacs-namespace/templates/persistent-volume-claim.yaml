@@ -3,7 +3,7 @@
 {{- end -}}
 {{- define "ffc-iacs-namespace.persistent-volume-claim" -}}
 metadata:
-  {{- if .Values.environmentCode }}
+  {{- if and (.Values.environmentCode) (ne (.Values.environmentCode | toString ) "snd") }}
   name: {{ .Values.persistentVolumeClaim.name }}-{{ .Values.namespace }}-{{ .Values.environmentCode }}
   {{ else }}
   name: {{ .Values.persistentVolumeClaim.name }}-{{ .Values.namespace }}
