@@ -1,0 +1,5 @@
+{{- if .Values.deployPersistentVolume -}}
+{{- include "ffc-helm-library.storage-class" (list . "ffc-iacs-namespace.storage-class") -}}
+{{- end -}}
+{{- define "ffc-iacs-namespace.storage-class" -}}
+{{- end -}}

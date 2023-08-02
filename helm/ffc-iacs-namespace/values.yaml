@@ -80,10 +80,13 @@ messageSecret:
   sso2TokensAuthSecret: not-real
   rmqPassword: not-real
 
+storageClass:
+  name: ffc-iacs-storage-class
+
 persistentVolume:
   name: ffc-iacs-persistent-volume
   provisionedBy: blob.csi.azure.com
-  storageClassName: azureblob-nfs-premium
+  storageClassName: ffc-iacs-storage-class
   readOnly: false
   handle: ffc-iacs-persistent-volume-blob
   resourceGroup: not-real
