@@ -12,7 +12,7 @@ spec:
   csi:
     driver: {{ .Values.persistentVolume.provisionedBy }}
     readOnly: {{ .Values.persistentVolume.readOnly }}
-    volumeHandle: {{ .Values.persistentVolume.handle }}
+    volumeHandle: {{ .Values.persistentVolume.handle }}-{{ .Values.namespace }}
     volumeAttributes:
       resourceGroup: {{ .Values.persistentVolume.resourceGroup }}
       storageAccount: {{ .Values.persistentVolume.storageAccount }}
