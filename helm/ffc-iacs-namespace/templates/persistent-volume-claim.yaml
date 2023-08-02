@@ -13,5 +13,5 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany  
-  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  storageClassName: {{ .Values.persistentVolumeClaim.storageClassName }}
 {{- end -}}
