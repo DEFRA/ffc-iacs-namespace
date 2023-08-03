@@ -76,21 +76,8 @@ messageConfigMap:
 messageSecret:
   type: Opaque
   name: stateless-pwd
-  # assuming if this value is omitted, then username/password auth is used instead
   sso2TokensAuthSecret: not-real
   rmqPassword: not-real
-
-# persistentVolume:
-#   name: ffc-iacs-persistent-volume
-#   provisionedBy: blob.csi.azure.com
-#   storageClassName: azureblob-nfs-premium
-#   readOnly: false
-#   handle: ffc-iacs-persistent-volume-blob
-#   resourceGroup: not-real
-#   storageAccount: not-real
-#   containerName: iacs
-#   protocol: nfs
-#   size: 1Pi # This value is ignored by the blob CSI driver but must be set to a value
 
 persistentVolumeClaim:
   name: nfs
