@@ -46,6 +46,8 @@ databaseConfigMap:
   taskManagerUser: taskmanager
   partiesAclJdbcUrl: jdbc:not-real
   partiesAclUser: parties_acl
+  calculationEngineJdbcUrl: jdbc:not-real
+  calculationEngineUser: calculation_engine
 
 databaseSecret:
   type: Opaque
@@ -63,6 +65,7 @@ databaseSecret:
   ssoPassword: not-real
   taskManagerPassword: not-real
   partiesAclPassword: not-real
+  calculationEnginePassword: not-real
 
 messageConfigMap:
   name: stateless-env
