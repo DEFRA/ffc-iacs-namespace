@@ -29,4 +29,7 @@ data:
   DB_TASK_MANAGER_USER: {{ .Values.databaseConfigMap.taskManagerUser | quote }}
   DB_PARTIES_ACL_JDBC_URL: {{ .Values.databaseConfigMap.partiesAclJdbcUrl | quote }}
   DB_PARTIES_ACL_USER: {{ .Values.databaseConfigMap.partiesAclUser | quote }}
+  DB_CALCULATORENGINE_JDBC_URL: {{ .Values.databaseConfigMap.calculationEngineJdbcUrl | quote }}
+  DB_CALCULATORENGINE_USER: {{ .Values.databaseConfigMap.calculationEngineUser | quote }}
+
 {{- end -}}
